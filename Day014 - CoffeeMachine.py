@@ -47,7 +47,7 @@ def report():
             total = 0
             for coinName,quantity in resources["Money"].items():
                 total += resources["Money"][coinName] * coinValues[coinName]
-                print(f"Money = ${total}")
+            print(f"Money = ${total}")
         elif (resource == "Water" or resource == "Milk"):
             print(f"{resource} = {quantity}ml")
         else:
@@ -75,7 +75,7 @@ def insertCoins(drinkName):
         print("Sorry thats not enought money. Money refunded")
         return False
     elif (total > returnPrice(drinkName)):
-        diff = total - returnPrice(drinkName)
+        diff = round(total - returnPrice(drinkName),2)
         removeCoins(diff)
         print(f"Here is ${diff} in change.")
         return True
@@ -95,7 +95,6 @@ def removeCoins(difference):
                 if (difference >= coinValues[coinName]):
                     difference -= coinValues[coinName]
                     resources["Money"][coinName] -=1
-                    print(f'returning a {coinName} now we have {resources["Money"][coinName]}')
                 else:
                     break
 
