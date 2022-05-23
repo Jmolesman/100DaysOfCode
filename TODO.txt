@@ -1,0 +1,5 @@
+Tarea para cuando finalice los 100 dias de codigo
+    * Day016 Part1 - Usar los bordes con cv y tratar de generar automaticamente las cordenadas
+    para las imagenes de turtle
+    *
+
